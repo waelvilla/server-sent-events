@@ -1,0 +1,20 @@
+<html>
+
+<body>
+    <div>
+        <h1>Hi <span id="header"></span></h1>
+    </div>
+
+
+    <script>
+        class Events {
+            constructor() {
+                this.events = new EventSource('http://192.168.100.66:3000/event-stream')
+                this.events.onopen = (e) => console.log(e)
+                this.events.onmessage = (e) => console.log(e)
+            }
+        }
+        new Events()
+    </script>
+</body>
+</html>
